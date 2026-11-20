@@ -1,0 +1,632 @@
+{
+ "tables": {
+  "single": {
+   "with bureau score": {
+    "bureau score, 5 quintiles": "0.673",
+    "device": "0.591",
+    "email host": "0.578",
+    "channel": "0.549",
+    "check-out time": "0.536",
+    "name in email": "0.545",
+    "number in email": "0.542",
+    "lower case": "0.549",
+    "email error": "0.531"
+   },
+   "without bureau score": {
+    "bureau score, 5 quintiles": "nan",
+    "device": "0.604",
+    "email host": "0.558",
+    "channel": "0.546",
+    "check-out time": "0.539",
+    "name in email": "0.584",
+    "number in email": "0.585",
+    "lower case": "0.554",
+    "email error": "0.537"
+   }
+  },
+  "rates": {
+   "paper": {
+    "bureau score: Q1 lowest": "2.12",
+    "bureau score: Q2": "1.01",
+    "bureau score: Q3": "0.68",
+    "bureau score: Q4": "0.47",
+    "bureau score: Q5 highest": "0.39",
+    "device: Desktop/Windows": "0.74",
+    "device: Desktop/Macintosh": "0.69",
+    "device: Tablet/Android": "1.11",
+    "device: Tablet/iOS": "0.79",
+    "device: Mobile/Android": "2.53",
+    "device: Mobile/iOS": "1.8",
+    "device: Do not track": "0.88",
+    "email host: Gmx": "0.82",
+    "email host: Web": "0.86",
+    "email host: T-Online": "0.51",
+    "email host: Gmail": "1.25",
+    "email host: Yahoo": "1.96",
+    "email host: Hotmail": "1.45",
+    "email host: Other": "0.9",
+    "channel: Paid": "1.11",
+    "channel: Direct": "0.84",
+    "channel: Affiliate": "0.64",
+    "channel: Organic": "0.86",
+    "channel: Other": "0.69",
+    "channel: Do not track": "0.88",
+    "check-out time: Evening": "0.85",
+    "check-out time: Night": "1.97",
+    "check-out time: Morning": "1.09",
+    "check-out time: Afternoon": "0.89",
+    "name in email: No": "1.24",
+    "name in email: Yes": "0.82",
+    "number in email: No": "0.84",
+    "number in email: Yes": "1.41",
+    "lower case: No": "0.84",
+    "lower case: Yes": "2.14",
+    "email error: No": "0.88",
+    "email error: Yes": "5.09"
+   },
+   "replica": {
+    "bureau score: Q1 lowest": "2.07",
+    "bureau score: Q2": "1.04",
+    "bureau score: Q3": "0.64",
+    "bureau score: Q4": "0.48",
+    "bureau score: Q5 highest": "0.36",
+    "device: Desktop/Windows": "0.77",
+    "device: Desktop/Macintosh": "0.77",
+    "device: Tablet/Android": "1.14",
+    "device: Tablet/iOS": "0.84",
+    "device: Mobile/Android": "1.97",
+    "device: Mobile/iOS": "1.25",
+    "device: Do not track": "0.95",
+    "email host: Gmx": "0.91",
+    "email host: Web": "0.91",
+    "email host: T-Online": "0.59",
+    "email host: Gmail": "1.04",
+    "email host: Yahoo": "1.54",
+    "email host: Hotmail": "0.97",
+    "email host: Other": "0.91",
+    "channel: Paid": "1.08",
+    "channel: Direct": "0.82",
+    "channel: Affiliate": "0.54",
+    "channel: Organic": "0.85",
+    "channel: Other": "0.68",
+    "channel: Do not track": "0.95",
+    "check-out time: Evening": "0.81",
+    "check-out time: Night": "1.77",
+    "check-out time: Morning": "1.1",
+    "check-out time: Afternoon": "0.89",
+    "name in email: No": "1.1",
+    "name in email: Yes": "0.85",
+    "number in email: No": "0.89",
+    "number in email: Yes": "1.05",
+    "lower case: No": "0.85",
+    "lower case: Yes": "1.77",
+    "email error: No": "0.88",
+    "email error: Yes": "4.1"
+   }
+  },
+  "replica_auc": {
+   "paper": {
+    "bureau score": "0.683",
+    "footprint": "0.696",
+    "both": "0.736",
+    "footprint, unscorable": "0.722"
+   },
+   "AUC": {
+    "bureau score": "0.6852626043570691",
+    "footprint": "0.6497148149747316",
+    "both": "0.7331199710999823",
+    "footprint, unscorable": "0.7267524465144001"
+   },
+   "SE": {
+    "bureau score": "0.00553992662074588",
+    "footprint": "0.005908880354512729",
+    "both": "0.005217553174445747",
+    "footprint, unscorable": "0.013020291322953272"
+   }
+  },
+  "replica_tests": {
+   "difference": {
+    "footprint minus bureau score": "-0.03554778938233749",
+    "both minus bureau score": "0.04785736674291352",
+    "both minus footprint": "0.08340515612525101"
+   },
+   "z": {
+    "footprint minus bureau score": "-4.340434422081006",
+    "both minus bureau score": "12.812159478975653",
+    "both minus footprint": "15.898576920011635"
+   },
+   "p-value": {
+    "footprint minus bureau score": "1.422013031150999e-05",
+    "both minus bureau score": "1.4017834538874287e-37",
+    "both minus footprint": "6.482054048467908e-57"
+   }
+  },
+  "hc_rates": {
+   "loans": {
+    "time: Afternoon": "123808",
+    "time: Evening": "11844",
+    "time: Morning": "105429",
+    "time: Night": "5465",
+    "weekday: Friday": "40893",
+    "weekday: Monday": "40142",
+    "weekday: Saturday": "27545",
+    "weekday: Sunday": "12726",
+    "weekday: Thursday": "40700",
+    "weekday: Tuesday": "42094",
+    "weekday: Wednesday": "42446",
+    "email given: No": "232153",
+    "email given: Yes": "14393",
+    "home phone given: No": "175610",
+    "home phone given: Yes": "70936",
+    "work phone given: No": "197443",
+    "work phone given: Yes": "49103",
+    "phone changed: 1\u20132 years ago": "44250",
+    "phone changed: 1\u20136 months ago": "10091",
+    "phone changed: 6\u201312 months ago": "21099",
+    "phone changed: over 2 years ago": "131008",
+    "phone changed: within a month": "40098",
+    "came with: Family": "34310",
+    "came with: Not recorded": "1078",
+    "came with: Others": "2169",
+    "came with: Spouse, partner": "8768",
+    "came with: Unaccompanied": "200221",
+    "address in other city: No": "228134",
+    "address in other city: Yes": "18412",
+    "housing left blank: No": "130849",
+    "housing left blank: Yes": "115697"
+   },
+   "share %": {
+    "time: Afternoon": "50.22",
+    "time: Evening": "4.8",
+    "time: Morning": "42.76",
+    "time: Night": "2.22",
+    "weekday: Friday": "16.59",
+    "weekday: Monday": "16.28",
+    "weekday: Saturday": "11.17",
+    "weekday: Sunday": "5.16",
+    "weekday: Thursday": "16.51",
+    "weekday: Tuesday": "17.07",
+    "weekday: Wednesday": "17.22",
+    "email given: No": "94.16",
+    "email given: Yes": "5.84",
+    "home phone given: No": "71.23",
+    "home phone given: Yes": "28.77",
+    "work phone given: No": "80.08",
+    "work phone given: Yes": "19.92",
+    "phone changed: 1\u20132 years ago": "17.95",
+    "phone changed: 1\u20136 months ago": "4.09",
+    "phone changed: 6\u201312 months ago": "8.56",
+    "phone changed: over 2 years ago": "53.14",
+    "phone changed: within a month": "16.26",
+    "came with: Family": "13.92",
+    "came with: Not recorded": "0.44",
+    "came with: Others": "0.88",
+    "came with: Spouse, partner": "3.56",
+    "came with: Unaccompanied": "81.21",
+    "address in other city: No": "92.53",
+    "address in other city: Yes": "7.47",
+    "housing left blank: No": "53.07",
+    "housing left blank: Yes": "46.93"
+   },
+   "default %": {
+    "time: Afternoon": "7.56",
+    "time: Evening": "6.87",
+    "time: Morning": "8.04",
+    "time: Night": "9.08",
+    "weekday: Friday": "7.88",
+    "weekday: Monday": "7.56",
+    "weekday: Saturday": "7.66",
+    "weekday: Sunday": "7.61",
+    "weekday: Thursday": "7.77",
+    "weekday: Tuesday": "7.93",
+    "weekday: Wednesday": "7.81",
+    "email given: No": "7.77",
+    "email given: Yes": "7.78",
+    "home phone given: No": "8.17",
+    "home phone given: Yes": "6.77",
+    "work phone given: No": "7.41",
+    "work phone given: Yes": "9.2",
+    "phone changed: 1\u20132 years ago": "9.13",
+    "phone changed: 1\u20136 months ago": "9.67",
+    "phone changed: 6\u201312 months ago": "9.61",
+    "phone changed: over 2 years ago": "6.6",
+    "phone changed: within a month": "8.64",
+    "came with: Family": "7.22",
+    "came with: Not recorded": "5.01",
+    "came with: Others": "8.71",
+    "came with: Spouse, partner": "7.72",
+    "came with: Unaccompanied": "7.87",
+    "address in other city: No": "7.43",
+    "address in other city: Yes": "11.88",
+    "housing left blank: No": "6.79",
+    "housing left blank: Yes": "8.87"
+   },
+   "t against baseline": {
+    "time: Afternoon": "baseline",
+    "time: Evening": "2.81",
+    "time: Morning": "-4.28",
+    "time: Night": "-3.83",
+    "weekday: Friday": "-0.41",
+    "weekday: Monday": "1.33",
+    "weekday: Saturday": "0.73",
+    "weekday: Sunday": "0.75",
+    "weekday: Thursday": "0.21",
+    "weekday: Tuesday": "-0.63",
+    "weekday: Wednesday": "baseline",
+    "email given: No": "baseline",
+    "email given: Yes": "-0.07",
+    "home phone given: No": "baseline",
+    "home phone given: Yes": "12.16",
+    "work phone given: No": "baseline",
+    "work phone given: Yes": "-12.48",
+    "phone changed: 1\u20132 years ago": "-16.52",
+    "phone changed: 1\u20136 months ago": "-10.18",
+    "phone changed: 6\u201312 months ago": "-14.06",
+    "phone changed: over 2 years ago": "baseline",
+    "phone changed: within a month": "-13.09",
+    "came with: Family": "4.23",
+    "came with: Not recorded": "4.28",
+    "came with: Others": "-1.39",
+    "came with: Spouse, partner": "0.5",
+    "came with: Unaccompanied": "baseline",
+    "address in other city: No": "baseline",
+    "address in other city: Yes": "-18.16",
+    "housing left blank: No": "baseline",
+    "housing left blank: Yes": "-19.12"
+   }
+  },
+  "time_of_day": {
+   "paper": {
+    "Night": "2.095744680851064",
+    "Morning": "1.1595744680851066",
+    "Afternoon": "0.946808510638298",
+    "Evening": "0.9042553191489362"
+   },
+   "ours": {
+    "Night": "1.1686004582019274",
+    "Morning": "1.035399300055155",
+    "Afternoon": "0.9734231775848078",
+    "Evening": "0.8849129449503245"
+   }
+  },
+  "hc_auc": {
+   "paper": {
+    "bureau score": "0.683",
+    "footprint": "0.696",
+    "both": "0.736"
+   },
+   "AUC": {
+    "bureau score": "0.6793997632002211",
+    "footprint": "0.5831156172232802",
+    "both": "0.6913062836246799"
+   },
+   "SE": {
+    "bureau score": "0.0020662718346219156",
+    "footprint": "0.0021699464258832",
+    "both": "0.002022174491435487"
+   }
+  },
+  "hc_tests": {
+   "difference": {
+    "footprint minus bureau score": "-0.09628414597694113",
+    "both minus bureau score": "0.011906520424458722",
+    "both minus footprint": "0.10819066640139985"
+   },
+   "z": {
+    "footprint minus bureau score": "-33.44637659334387",
+    "both minus bureau score": "16.560227664295436",
+    "both minus footprint": "45.862573473520385"
+   },
+   "p-value": {
+    "footprint minus bureau score": "2.9056799468654854e-245",
+    "both minus bureau score": "1.350819585895881e-61",
+    "both minus footprint": "0.0"
+   }
+  },
+  "coefficients": {
+   "coef": {
+    "address in other city: Yes": "0.39",
+    "came with: Family": "-0.09",
+    "came with: Not recorded": "-0.55",
+    "came with: Others": "0.1",
+    "came with: Spouse, partner": "-0.03",
+    "const": "-2.8",
+    "email given: Yes": "0.05",
+    "home phone given: Yes": "-0.23",
+    "housing left blank: Yes": "0.22",
+    "phone changed: 1\u20132 years ago": "0.32",
+    "phone changed: 1\u20136 months ago": "0.39",
+    "phone changed: 6\u201312 months ago": "0.39",
+    "phone changed: within a month": "0.3",
+    "score": "nan",
+    "time: Evening": "-0.1",
+    "time: Morning": "0.06",
+    "time: Night": "0.17",
+    "weekday: Friday": "0.01",
+    "weekday: Monday": "-0.03",
+    "weekday: Saturday": "-0.02",
+    "weekday: Sunday": "-0.04",
+    "weekday: Thursday": "-0.01",
+    "weekday: Tuesday": "0.02",
+    "work phone given: Yes": "0.3"
+   },
+   "z": {
+    "address in other city: Yes": "15.81",
+    "came with: Family": "-3.9",
+    "came with: Not recorded": "-3.9",
+    "came with: Others": "1.31",
+    "came with: Spouse, partner": "-0.79",
+    "const": "-117.38",
+    "email given: Yes": "1.46",
+    "home phone given: Yes": "-12.78",
+    "housing left blank: Yes": "13.94",
+    "phone changed: 1\u20132 years ago": "16.19",
+    "phone changed: 1\u20136 months ago": "11.1",
+    "phone changed: 6\u201312 months ago": "14.84",
+    "phone changed: within a month": "14.21",
+    "score": "nan",
+    "time: Evening": "-2.7",
+    "time: Morning": "3.57",
+    "time: Night": "3.58",
+    "weekday: Friday": "0.55",
+    "weekday: Monday": "-1.29",
+    "weekday: Saturday": "-0.68",
+    "weekday: Sunday": "-1.04",
+    "weekday: Thursday": "-0.31",
+    "weekday: Tuesday": "0.73",
+    "work phone given: Yes": "15.95"
+   },
+   "coef with score": {
+    "address in other city: Yes": "0.24",
+    "came with: Family": "-0.02",
+    "came with: Not recorded": "-0.6",
+    "came with: Others": "0.14",
+    "came with: Spouse, partner": "0.06",
+    "const": "-1.27",
+    "email given: Yes": "-0.09",
+    "home phone given: Yes": "-0.21",
+    "housing left blank: Yes": "0.22",
+    "phone changed: 1\u20132 years ago": "0.22",
+    "phone changed: 1\u20136 months ago": "0.27",
+    "phone changed: 6\u201312 months ago": "0.26",
+    "phone changed: within a month": "0.29",
+    "score": "-0.03",
+    "time: Evening": "-0.13",
+    "time: Morning": "0.1",
+    "time: Night": "0.29",
+    "weekday: Friday": "0.01",
+    "weekday: Monday": "-0.04",
+    "weekday: Saturday": "-0.02",
+    "weekday: Sunday": "-0.06",
+    "weekday: Thursday": "-0.02",
+    "weekday: Tuesday": "0.01",
+    "work phone given: Yes": "0.21"
+   },
+   "z with score": {
+    "address in other city: Yes": "9.56",
+    "came with: Family": "-1.08",
+    "came with: Not recorded": "-4.23",
+    "came with: Others": "1.72",
+    "came with: Spouse, partner": "1.41",
+    "const": "-43.65",
+    "email given: Yes": "-2.7",
+    "home phone given: Yes": "-11.47",
+    "housing left blank: Yes": "14.01",
+    "phone changed: 1\u20132 years ago": "10.57",
+    "phone changed: 1\u20136 months ago": "7.3",
+    "phone changed: 6\u201312 months ago": "9.68",
+    "phone changed: within a month": "13.42",
+    "score": "-82.81",
+    "time: Evening": "-3.47",
+    "time: Morning": "6.27",
+    "time: Night": "5.8",
+    "weekday: Friday": "0.49",
+    "weekday: Monday": "-1.66",
+    "weekday: Saturday": "-0.81",
+    "weekday: Sunday": "-1.48",
+    "weekday: Thursday": "-0.6",
+    "weekday: Tuesday": "0.5",
+    "work phone given: Yes": "10.74"
+   }
+  },
+  "ext_scores": {
+   "loans": {
+    "EXT_SOURCE_1": "134133.0",
+    "EXT_SOURCE_2": "306851.0",
+    "EXT_SOURCE_3": "246546.0"
+   },
+   "default %": {
+    "EXT_SOURCE_1": "7.495545466067262",
+    "EXT_SOURCE_2": "8.073299418936227",
+    "EXT_SOURCE_3": "7.766501991514768"
+   },
+   "bureau score": {
+    "EXT_SOURCE_1": "0.665680953698119",
+    "EXT_SOURCE_2": "0.6561201398042563",
+    "EXT_SOURCE_3": "0.6793997632002211"
+   },
+   "footprint": {
+    "EXT_SOURCE_1": "0.5793590051948349",
+    "EXT_SOURCE_2": "0.586512393686554",
+    "EXT_SOURCE_3": "0.5831156172232802"
+   },
+   "both": {
+    "EXT_SOURCE_1": "0.6721319900062451",
+    "EXT_SOURCE_2": "0.6647315006514013",
+    "EXT_SOURCE_3": "0.6913062836246799"
+   }
+  },
+  "wider": {
+   "AUC, wider footprint": {
+    "bureau score": "0.6793997632002211",
+    "footprint": "0.6082373093464983",
+    "both": "0.699635967767581"
+   }
+  },
+  "cramer": {
+   "V": {
+    "time": "0.024",
+    "weekday": "0.007",
+    "email given": "0.051",
+    "home phone given": "0.004",
+    "work phone given": "0.061",
+    "phone changed": "0.044",
+    "came with": "0.023",
+    "address in other city": "0.077",
+    "housing left blank": "0.013"
+   }
+  },
+  "unscorable": {
+   "loans": {
+    "with a score": "246546",
+    "without a score": "60965"
+   },
+   "defaults": {
+    "with a score": "19148",
+    "without a score": "5677"
+   },
+   "default %": {
+    "with a score": "7.766501991514768",
+    "without a score": "9.311900270647094"
+   },
+   "footprint AUC": {
+    "with a score": "0.5831156172232802",
+    "without a score": "0.5967250065995481"
+   },
+   "SE": {
+    "with a score": "0.0021699464258832",
+    "without a score": "0.003970631672160521"
+   },
+   "paper AUC": {
+    "with a score": "0.696",
+    "without a score": "0.722"
+   }
+  },
+  "cv": {
+   "in sample": {
+    "paper, bureau score": "0.683",
+    "paper, footprint": "0.696",
+    "paper, both": "0.736",
+    "paper, footprint, unscorable": "0.722",
+    "replica, bureau score": "0.6852626043570691",
+    "Home Credit, bureau score": "0.6793997632002211",
+    "replica, footprint": "0.6497148149747316",
+    "Home Credit, footprint": "0.5831156172232802",
+    "replica, both": "0.7331199710999823",
+    "Home Credit, both": "0.6913062836246799",
+    "replica, footprint, unscorable": "0.7267524465144001",
+    "Home Credit, footprint, unscorable": "0.5967250065995481"
+   },
+   "out of sample": {
+    "paper, bureau score": "0.68",
+    "paper, footprint": "0.688",
+    "paper, both": "0.728",
+    "paper, footprint, unscorable": "0.683",
+    "replica, bureau score": "0.6847404076800799",
+    "Home Credit, bureau score": "0.6793420919069583",
+    "replica, footprint": "0.6427335205275925",
+    "Home Credit, footprint": "0.5813193521066262",
+    "replica, both": "0.7292071619404102",
+    "Home Credit, both": "0.6906055828667096",
+    "replica, footprint, unscorable": "0.6970412216634999",
+    "Home Credit, footprint, unscorable": "0.5914194542615315"
+   },
+   "defaults": {
+    "paper, bureau score": "2395.0",
+    "paper, footprint": "2395.0",
+    "paper, both": "2395.0",
+    "paper, footprint, unscorable": "388.0",
+    "replica, bureau score": "2341.0",
+    "Home Credit, bureau score": "19148.0",
+    "replica, footprint": "2341.0",
+    "Home Credit, footprint": "19148.0",
+    "replica, both": "2341.0",
+    "Home Credit, both": "19148.0",
+    "replica, footprint, unscorable": "374.0",
+    "Home Credit, footprint, unscorable": "5677.0"
+   },
+   "drop, points": {
+    "paper, bureau score": "0.30000000000000027",
+    "paper, footprint": "0.8000000000000007",
+    "paper, both": "0.8000000000000007",
+    "paper, footprint, unscorable": "3.8999999999999924",
+    "replica, bureau score": "0.05221966769891617",
+    "Home Credit, bureau score": "0.005767129326283982",
+    "replica, footprint": "0.698129444713913",
+    "Home Credit, footprint": "0.17962651166539834",
+    "replica, both": "0.39128091595720393",
+    "Home Credit, both": "0.07007007579703517",
+    "replica, footprint, unscorable": "2.9711224850900164",
+    "Home Credit, footprint, unscorable": "0.530555233801655"
+   }
+  },
+  "verdict": {
+   "paper": {
+    "the footprint alone is as good as the bureau score": "69.6% vs 68.3%",
+    "the two are almost unrelated": "correlation about 10%",
+    "together they beat either one": "+5.3 points over the score",
+    "the footprint works as well without a bureau score": "68.3% vs 68.8% out of sample",
+    "out of sample the AUCs barely fall": "below 1 point, no fixed effects"
+   },
+   "Home Credit": {
+    "the footprint alone is as good as the bureau score": "58.3% vs 67.9%",
+    "the two are almost unrelated": "correlation 9%",
+    "together they beat either one": "+1.2 points",
+    "the footprint works as well without a bureau score": "59.1% vs 58.1% out of sample",
+    "out of sample the AUCs barely fall": "0.2 points"
+   },
+   "holds": {
+    "the footprint alone is as good as the bureau score": "no",
+    "the two are almost unrelated": "yes",
+    "together they beat either one": "yes",
+    "the footprint works as well without a bureau score": "yes",
+    "out of sample the AUCs barely fall": "yes"
+   }
+  }
+ },
+ "extra": {
+  "complement intercept": 45.49604482262368,
+  "complement slope": 0.09008279420649218,
+  "complement correlation": 0.09008325946547575,
+  "complement R2": 0.008114993635924227,
+  "complement points shown": 2404.0,
+  "loans": 307511,
+  "defaults": 24825,
+  "default %": 8.072881945686495,
+  "scorable loans": 246546,
+  "unscorable loans": 60965,
+  "file bytes": 166133370,
+  "replica customers": 254808,
+  "replica defaults": 2341,
+  "replica unscorable customers": 15591,
+  "replica unscorable defaults": 374,
+  "footprint variables": 9,
+  "repeats": 100
+ },
+ "summary": {
+  "paper": {
+   "AUC, bureau score": "68.3%",
+   "AUC, footprint": "69.6%",
+   "AUC, both": "73.6%",
+   "AUC, footprint without a score": "72.2%",
+   "correlation of the two scores": "about 10%",
+   "drop out of sample, footprint without a score": "3.9 points"
+  },
+  "replica": {
+   "AUC, bureau score": "68.5%",
+   "AUC, footprint": "65.0%",
+   "AUC, both": "73.3%",
+   "AUC, footprint without a score": "72.7%",
+   "correlation of the two scores": "0 by construction",
+   "drop out of sample, footprint without a score": "3.0 points"
+  },
+  "Home Credit": {
+   "AUC, bureau score": "67.9%",
+   "AUC, footprint": "58.3%",
+   "AUC, both": "69.1%",
+   "AUC, footprint without a score": "59.7%",
+   "correlation of the two scores": "9%",
+   "drop out of sample, footprint without a score": "0.5 points"
+  }
+ }
+}
