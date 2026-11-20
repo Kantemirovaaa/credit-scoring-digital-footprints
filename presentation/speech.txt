@@ -1,0 +1,268 @@
+ON THE RISE OF FINTECHS: CREDIT SCORING USING DIGITAL FOOTPRINTS (Berg, Burg, Gombović and Puri, Review of Financial Studies, 2020)
+Presentation script: about 15 minutes, then 10 minutes of questions
+Group 7: Arsentyev Arseniy, Grebennikova Polina, Kantemirova Elizaveta, Pushkarev Vladislav
+
+How to use it: read the script aloud twice, then present from the slides and use the text
+only as a guide. Times assume a calm pace of about 125 words per minute. The same text is in
+the speaker notes of the pptx.
+
+============================================================================================
+PART 1. PROBLEM  (planned 2 min, script 2:00, 0:00 to 2:00)
+============================================================================================
+
+[Slide 1] Title slide
+(0:00 to 0:30)
+Hello everyone, we are group 7: Arseniy, Polina, Elizaveta and Vladislav. We are presenting
+"On the Rise of FinTechs: Credit Scoring Using Digital Footprints" by Tobias Berg, Valentin
+Burg, Ana Gombović and Manju Puri, published in the Review of Financial Studies in 2020. The
+question is simple: can the traces we leave on a website tell a lender as much as a credit
+bureau?
+
+[Slide 2] At a German online shop, simple traces like the device spread default rates as widely as the credit bureau score
+(0:30 to 2:00)
+Imagine you buy a sofa online and pay by invoice two weeks later. For the shop, every such
+order is a small loan. Before it ships, it knows your name, your address and your email,
+and, for free, a few things the website records anyway: whether you use a phone or a
+computer, Android or iPhone, how you came to the site, and the time of the order. This chart
+is drawn from the paper's Table 3. Each dot is a group of customers and its default rate.
+The orange row is the credit bureau score in five quintiles: from 2.1 percent in the worst
+fifth to 0.4 percent in the best. Now the navy rows. Orders from an Android phone default at
+2.5 percent, from a Mac at 0.7. Yahoo users at 2 percent, T-Online users at 0.5. A typing
+error in the email address: 5 percent. These simple traces spread customers as widely as the
+bureau does. If that holds in general, a fintech can lend without the information advantage
+of a bank, and some of the two billion adults without access to banks could get credit.
+
+============================================================================================
+PART 2. METHOD  (planned 3 min, script 2:55, 2:00 to 4:55)
+============================================================================================
+
+[Slide 3] Every purchase on invoice is a short loan, and the website records ten footprint variables for free
+(2:00 to 3:25)
+The data comes from a German online furniture shop, similar to Wayfair: 270,399 purchases on
+invoice between October 2015 and December 2016. Default means that the invoice was still
+unpaid after three reminders and went to a debt collection agency, on average three and a
+half months after the order. That happens to 0.94 percent of the customers with a bureau
+score. For every order above 100 euros the shop requests a bureau score, and 6 percent of
+the customers have none. They default at 2.5 percent. Next to the score, the shop records
+ten footprint variables, and the authors group them by what they stand for. Income and
+wealth: the device, the operating system and the email host. T-Online is a paid service with
+richer customers, Yahoo and Hotmail are free and old. Character: the channel, for example a
+paid ad or a price comparison site, and the time of the order. And reputation and care: a
+name or a number in the email address, typing only in lower case, and a typing error in the
+email.
+
+[Slide 4] Three logit models are compared by their AUC: how often a random defaulter looks riskier than a random payer
+(3:25 to 4:55)
+How do they compare the footprint with the bureau score? They fit three logit models of
+default: on the bureau score alone, on the footprint alone, and on both. Each model gives
+every customer a predicted probability of default, and each is judged by its AUC, the area
+under the ROC curve. In words: take one customer who defaulted and one who paid, at random.
+The AUC is the chance that the model calls the defaulter riskier. Fifty percent is a coin
+flip. In credit scoring, 60 percent is good when information is scarce and 70 is the goal
+when it is rich. The difference between two AUCs is tested with the test of DeLong, and
+overfitting with cross-validation. The shop's data is private, so we take two routes, shown
+at the bottom. First, we rebuild a sample from the paper's own tables and check that our
+code gives back its numbers. Second, we run the same tests on public data: 307,511 loans of
+the lender Home Credit, which has an external score and an application form that leaves a
+similar footprint.
+
+============================================================================================
+PART 3. RESULTS AND OUR REPRODUCTION  (planned 5 min, script 4:55, 4:55 to 9:50)
+============================================================================================
+
+[Slide 5] On a sample rebuilt from the paper's tables, our code redraws Figure 4, but with a weaker footprint
+(4:55 to 6:05)
+First the check. From the shares in Table 3 and the coefficients in Table 5 we drew 254,808
+customers with a score and 15,591 without, and ran our code on them. On the left is Figure 4
+of the paper, on the right the same three ROC curves from our replica, on the same axes. The
+bureau score comes back at 68.5 percent against 68.3, both together at 73.3 against 73.6,
+and the footprint of customers without a score at 72.7 against 72.2. So our code and the
+paper's tables agree. Only the footprint alone is weaker, 65 against 69.6. We draw every
+trait on its own, with the bureau score held fixed, while in the real data risky traits come
+together and share some information with the score. And the paper reports only 6 of its 18
+email hosts; with those 6 its own footprint has 68.7 percent.
+
+[Slide 6] Night applications default most and evening ones least, at the German shop and at Home Credit
+(6:05 to 7:10)
+Now Home Credit. Its 307,511 loan applications are public on Kaggle, with a default rate of
+8 percent. As the bureau score we use the external score called EXT_SOURCE_3. As the
+footprint we take nine things the application records that say nothing about income or debt:
+the hour and the weekday, whether an email, a home phone and a work phone were given, when
+the phone number last changed, who came along, a contact address in another city, and
+whether the housing questions were left blank. The first result: the hour works in the same
+direction as in the paper. Night is the riskiest time and evening the safest, in both
+datasets. But at the shop night buyers default at twice the average, at Home Credit only 17
+percent above it.
+
+[Slide 7] On Home Credit the footprint alone ranks borrowers far worse than the bureau score, but still adds to it
+(7:10 to 8:10)
+This is the main result. On the left, Figure 4 of the paper: the footprint at 69.6 percent
+beats the bureau score at 68.3, and both together reach 73.6. On the right, our ROC curves
+on the same axes. The external score has almost the same AUC as the German bureau score,
+67.9 percent. But our footprint alone reaches only 58.3, almost ten points below the score.
+So the paper's first claim, that the footprint is as good as a bureau score, does not carry
+over. The second claim does: adding the footprint to the score raises the AUC to 69.1, and
+the DeLong test says this gain is far from chance. It is only 1.2 points, though, against
+5.3 in the paper.
+
+[Slide 8] As in the paper, the footprint and the bureau score are almost unrelated, so they complement each other
+(8:10 to 9:05)
+Why does a weak footprint still add something? Because it knows different things. The paper
+shows this with Figure 5. Every dot is a customer, placed by its percentile under the bureau
+score and under the footprint. The cloud has no shape, and the R squared is 1 percent. Our
+version on Home Credit looks the same: an R squared of 0.8 percent, a correlation of 9
+percent against about 10 in the paper, and a Cramér's V between the score and each footprint
+variable of at most 0.08, against 0.07. On this point the two datasets agree almost exactly.
+Most clients with a good score have an average footprint, and the other way round.
+
+[Slide 9] Without a bureau score the footprint works at least as well, in the paper and in our data
+(9:05 to 9:50)
+The paper's most hopeful result is about people without a credit history. For the 6 percent
+of customers without a bureau score, the footprint works at least as well: 72.2 percent
+against 69.6 for the others, and almost the same out of sample. We see the same pattern at
+Home Credit. Clients without an external score default more often, 9.3 percent against 7.8,
+and the footprint ranks them slightly better than the others: 59.7 against 58.3 percent. The
+level is far below the paper's, but the direction is the same: the footprint does not need a
+credit file to work.
+
+============================================================================================
+PART 4. CRITIQUE  (planned 3 min, script 3:10, 9:50 to 13:00)
+============================================================================================
+
+[Slide 10] Out of sample the AUCs barely fall; the paper's 3.9-point drop is mostly small-sample noise
+(9:50 to 11:00)
+Could these results be overfit? An AUC measured on the customers the model was fitted on is
+too optimistic, the more so with few defaults per coefficient. The paper's customers without
+a score have only about 390 defaults. The authors answer with cross-validation: fit on one
+random half, predict the other, a hundred times. With a score the AUCs fall by less than a
+point, unless many fixed effects are added, and without a score by 3.9 points. We ran the
+same test on our replica, where by construction there is nothing to find beyond the paper's
+coefficients. It loses 3 points without a score. So most of the paper's drop is what a small
+sample does by chance, not a sign of fitting noise. On Home Credit, with thousands of
+defaults, the drops are a fraction of a point.
+
+[Slide 11] On a new dataset four of the paper's five claims hold, but the footprint alone falls far short of the bureau score
+(11:00 to 11:50)
+Our upgrade is the new dataset itself, so here are the paper's five claims next to it. The
+footprint and the score are almost unrelated: holds. Together they beat either one: holds,
+but with a gain of 1.2 points instead of 5.3. The footprint works without a score: holds.
+The AUCs survive out of sample: holds. But the boldest claim, a footprint as good as a
+bureau score, does not: 58 against 68 percent. This does not depend on which external score
+we call the bureau score: with the other two the gap is 7 to 9 points. And a wider
+footprint, with fields about the job added, still reaches only 61 percent.
+
+[Slide 12] The open question is whether the footprint can replace a credit bureau, or only add to it
+(11:50 to 13:00)
+First the assumptions. The shop's customers stand in for borrowers in general, but these are
+orders above 100 euros, loans of about three and a half months, and the shop had already
+turned away customers with a predicted default above 10 percent, using the same score and
+footprint. On data snooping: the categories were chosen on the same data. With only the 6
+email hosts they report, the footprint has 68.7 percent, barely above the bureau score at
+68.3, and even with 18 hosts the lead is significant only at the 10 percent level. A missing
+baseline: the footprint is never compared with a model built on the cheap data every lender
+already collects, like income or job. The authors do check fixed effects, a stricter default
+definition and sample splits. What would break the story is a different setting, and Home
+Credit is one.
+
+============================================================================================
+PART 5. NEXT STEPS  (planned 2 min, script 2:00, 13:00 to 15:00)
+============================================================================================
+
+[Slide 13] With three more months we would test a richer footprint, its fairness and its stability
+(13:00 to 15:00)
+With three more months, this is what we would do. First, a footprint closer to the paper's.
+Lending Club published about two million loans with the job title as the borrower typed it,
+so we could test the paper's lower case effect in American data. Second, fairness. The paper
+expects regulators to ask whether the footprint is a proxy for characteristics like gender
+or age, which American credit bureaus may not use. We would measure how well the footprint
+predicts them. Third, stability. The Estonian lender Bondora records the hour each
+application was signed, from 2009 to 2021, so we could see whether the night effect fades
+over the years. And fourth, a flexible model like gradient boosting instead of a logit, to
+see whether the same footprint holds more information. To conclude. With our own code, the
+paper's tables give back its AUCs, so the paper is consistent with itself. On public loan
+data, the footprint and the bureau score are nearly unrelated, they add up, and the
+footprint works without a credit file. But here the footprint alone is far weaker than a
+bureau score. Part of the reason may be our variables: Home Credit records no device and no
+email host, and those were the strongest traces at the German shop. So the paper's idea
+survives, but its boldest claim needs a richer footprint to be tested. Simple traces help a
+lender; on this evidence they do not replace a credit bureau.
+
+============================================================================================
+CLOSING  (15:00)
+============================================================================================
+
+[Slide 14] References and code: leave it on screen for a second, no need to read it.
+[Slide 15] Thank you. We are happy to take your questions.
+
+============================================================================================
+QUESTIONS WE SHOULD BE READY FOR (10 min of questions)
+============================================================================================
+
+1. Why did you not use the paper's data?
+   It belongs to a German online shop and is not public. We did two things instead: a
+replica drawn from the paper's own tables, to check our code against its numbers, and the
+same tests on the public Home Credit loans.
+
+2. What exactly is EXT_SOURCE_3?
+   Home Credit only calls it a normalized score from an external data source. It behaves
+like a bureau score: alone it has an AUC of 67.9%, almost the paper's 68.3%. With the other
+two external scores our conclusions do not change: the footprint is 7.0 to 8.6 points below
+them.
+
+3. Is your footprint not simply a bad copy of the paper's?
+   Partly, and that is the main limit of our test. Home Credit has no device, operating
+system or email host, and it records who came along to apply, so many applications seem to
+be made in person. We took what the application records about how it was made. Adding fields
+about the job raises the footprint only to 60.8%. So what fails to carry over may be these
+variables, not the idea itself.
+
+4. Why is the footprint weaker in your replica than in the paper?
+   65.0% against 69.6%. We draw each variable on its own and use the coefficients measured
+with the bureau score held fixed, while in the real data risky traits come together and
+overlap with the score. The paper also reports only 6 of its 18 email hosts; with 6 hosts
+its own AUC is 68.7%. The model with both, which does not suffer from the overlap, comes
+back at 73.3% against 73.6%.
+
+5. What does a difference of one or two points of AUC mean in practice?
+   The AUC is a ranking measure, so a higher AUC usually means fewer defaulters among the
+approved customers at the same approval rate. In the paper the lead of the footprint over
+the score is 1.3 points and significant only at the 10% level; the gain from combining them,
+5.3 points, is the robust result.
+
+6. What is the DeLong test?
+   A test for the difference between two AUCs measured on the same customers. It uses each
+customer's contribution to both AUCs, so it accounts for the two models being correlated. On
+Home Credit the gain of the combined model over the score has a z of 16.6.
+
+7. Why N×2-fold cross-validation and not one test sample?
+   Every customer is predicted once out of sample, so the AUC uses the whole sample, and
+repeating the split averages out the luck of one split. We used the paper's 100 repetitions.
+
+8. Why is the out-of-sample drop so small in Home Credit?
+   It has 19,148 defaults with a score and 5,677 without, for about 20 coefficients. The
+paper's customers without a score have 388 defaults, and our replica of that size loses 3.0
+points by chance alone.
+
+9. Who are the clients without a score in Home Credit?
+   Clients for whom EXT_SOURCE_3 is missing, one in five. Home Credit does not say why. Like
+the paper's unscorable customers they default more often: 9.3% against 7.8%.
+
+10. Could customers game the footprint?
+   Some variables are costly to change, like buying an iPhone or a paid email account;
+others are habits, like shopping at night. The authors discuss this as the Lucas critique:
+once lenders use the footprint, people may change it, and its power could fall or even rise.
+Nobody has tested it yet.
+
+11. Is using the footprint fair?
+   It may be a proxy for characteristics lenders may not use. The paper raises this for
+regulators but does not measure it. It is our second next step.
+
+12. Does the shop's own screening bias the results?
+   Possibly. The shop turned away customers with a predicted default above 10%, using the
+bureau score and the footprint. This removes the worst customers on both measures, so both
+AUCs are probably lower than in an unscreened population, and we cannot say which one loses
+more.
+
+13. How is the time of day measured at Home Credit?
+   HOUR_APPR_PROCESS_START, the hour at which the client started the application. We cut it
+into the paper's four bands: night 0–6, morning 6–12, afternoon 12–18 and evening 18–24.
